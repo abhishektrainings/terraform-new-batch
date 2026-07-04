@@ -1,0 +1,19 @@
+output "vnet_name" {
+  value       = azurerm_virtual_network.main.name
+  description = "The name of the virtual network"
+}
+
+output "subnet_name" {
+  value       = azurerm_subnet.main.name
+  description = "The name of the subnet"
+}
+
+output "subnet_id" {
+  value       = azurerm_subnet.main.id
+  description = "The ID of the subnet"
+}
+
+output "network_interface_id" {
+  value       = azurerm_subnet.main.id
+  description = "The ID of the subnet"
+}
