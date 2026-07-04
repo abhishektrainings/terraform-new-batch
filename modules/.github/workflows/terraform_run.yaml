@@ -9,7 +9,7 @@ on:
 
 jobs:
   plan:
-    if: github.event_name == 'pull_request' || (github.event_name == 'pull_request_review' && github.event.review.state == 'approved')
+    if: github.event_name == 'pull_request' || (github.event_name == 'pull_request_review' && github.event.review.state == 'commented')
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -37,7 +37,7 @@ jobs:
 
   apply:
     needs: plan
-    if: github.event_name == 'pull_request_review' && github.event.review.state == 'approved'
+    if: github.event_name == 'pull_request_review' && github.event.review.state == 'commented'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
