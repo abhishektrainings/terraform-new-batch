@@ -18,6 +18,7 @@ resource "azurerm_resource_group" "main" {
   tags = var.tags
 }
 
+# Creating Virtual Network and Subnet
 module "vnet" {
   source = "./modules/vnet"
 
@@ -29,6 +30,7 @@ module "vnet" {
   subnet_address_prefix = var.subnet_address_prefix
 }
 
+# Creating Virtual Machine
 module "virtualmachine" {
   source = "./modules/virtualmachine"
 
@@ -43,6 +45,7 @@ module "virtualmachine" {
   tags                 = var.tags
 }
 
+# creating storage account
 module "storage" {
   source = "./modules/storage"
 
