@@ -46,8 +46,8 @@ module "virtualmachine" {
 module "storage" {
   source = "./modules/storage"
 
-  resource_group_name = azurerm_resource_group.main.name
-  location            = var.location
+  resource_group_name  = azurerm_resource_group.main.name
+  location             = var.location
   storage_account_name = var.storage_account_name
-  tags                = var.tags
+  tags                 = var.tags
 }
