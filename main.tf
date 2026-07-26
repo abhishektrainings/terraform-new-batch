@@ -18,7 +18,6 @@ resource "azurerm_resource_group" "main" {
   tags = var.tags
 }
 
-# Creating Vnet and Subnet
 module "vnet" {
   source = "./modules/vnet"
 
