@@ -11,7 +11,13 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        directory: [environments/dev, environments/stg, environments/prod]
+        include:
+          - environment: dev
+            directory: environments/dev
+          - environment: stg
+            directory: environments/stg
+          - environment: prod
+            directory: environments/prod
 
     steps:
       - name: Checkout Code
