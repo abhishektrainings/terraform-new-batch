@@ -1,8 +1,20 @@
 // Variables for Terraform configuration (generated to match typical Azure Batch main.tf)
+variable "environment" {
+  description = "Target environment name (dev, stg, prod)"
+  type        = string
+  default     = "dev"
+}
+
+variable "project_name" {
+  description = "Base name for the project resources"
+  type        = string
+  default     = "batch"
+}
+
 variable "resource_group_name" {
   description = "Name of the resource group to create or use"
   type        = string
-  default     = "rg-main"
+  default     = null
 }
 
 variable "location" {
@@ -14,7 +26,7 @@ variable "location" {
 variable "vnet_name" {
   description = "Name of the virtual network"
   type        = string
-  default     = "vnet-main"
+  default     = null
 }
 
 variable "address_space" {
@@ -26,7 +38,7 @@ variable "address_space" {
 variable "subnet_name" {
   description = "Name of the subnet"
   type        = string
-  default     = "subnet-main"
+  default     = null
 }
 
 variable "subnet_address_prefix" {
@@ -49,7 +61,7 @@ variable "tags" {
 variable "vm_name" {
   description = "Name of the virtual machine"
   type        = string
-  default     = "vm-main"
+  default     = null
 }
 
 variable "vm_size" {
@@ -146,5 +158,5 @@ variable "public_ip_sku" {
 variable "storage_account_name" {
   description = "The name of the storage account."
   type        = string
-  default     = "teststorageacct1024"
+  default     = null
 }
